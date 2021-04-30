@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render 1`] = `
+<div>
+  <nav
+    class="hidden"
+  >
+    <div
+      class="header-container"
+    >
+      <div
+        class="header-logo"
+      >
+        PRODUCT PAGE
+        <i
+          class="fas fa-store"
+        />
+      </div>
+      <div
+        class="menu-icon"
+        data-testid="menu-icon-wrapper"
+      >
+        <i
+          class="fas fa-bars"
+          data-testid="menu-icon"
+        />
+      </div>
+      <ul
+        class="nav-menu"
+      >
+        <li
+          class="nav-item nav-links"
+        >
+          Home
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
