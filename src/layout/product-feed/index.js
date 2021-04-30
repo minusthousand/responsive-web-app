@@ -9,6 +9,8 @@ import Row from './Row'
 import SearchBar from './SearchBar'
 import SearchBarContainer from './SearchBarContainer'
 import Text from './Text'
+import LikeButton from './LikeButton'
+import LikeIcon from './LikeIcon'
 
 const ProductFeedStyle = styled.div`
     padding-top: 32px;
@@ -26,5 +28,7 @@ ProductFeedStyle.Row = Row
 ProductFeedStyle.SearchBar = SearchBar
 ProductFeedStyle.SearchBarContainer = SearchBarContainer
 ProductFeedStyle.Text = Text
+ProductFeedStyle.LikeButton = LikeButton
+ProductFeedStyle.LikeIcon = LikeIcon
 
 export default ProductFeedStyle

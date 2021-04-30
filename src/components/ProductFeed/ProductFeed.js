@@ -32,16 +32,23 @@ export function ProductFeed({ products, filterProducts }) {
             </ProductFeedStyle.SearchBarContainer>
             <ProductFeedStyle.Container>
                 <ProductFeedStyle.Row>
-                    {products.filteredData.map((product) => (
-                        <CardItem
-                            key={product.id}
-                            {...product}
-                            src={'https://' + product.imageUrl}
-                            path={'https://' + product.url}
-                            price={product.price.current.text}
-                            text={product.name}
-                        />
-                    ))}
+                    {products.loading ? 'Loading...' : ''}
+                    {products.filteredData.length === 0 && !products.loading ? (
+                        'Nothing found.'
+                    ) : (
+                        <>
+                            {products.filteredData.map((product) => (
+                                <CardItem
+                                    key={product.id}
+                                    {...product}
+                                    src={'https://' + product.imageUrl}
+                                    path={'https://' + product.url}
+                                    price={product.price.current.text}
+                                    text={product.name}
+                                />
+                            ))}
+                        </>
+                    )}
                 </ProductFeedStyle.Row>
             </ProductFeedStyle.Container>
         </ProductFeedStyle>

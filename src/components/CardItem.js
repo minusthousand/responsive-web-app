@@ -2,8 +2,6 @@ import React from 'react'
 
 import ProductFeedStyle from '../layout/product-feed/index'
 
-import Button from '../ui/button/Button'
-
 import useLocalStorage from '../hooks/useLocalStorage'
 
 function CardItem(props) {
@@ -14,16 +12,26 @@ function CardItem(props) {
         <ProductFeedStyle.Item>
             <ProductFeedStyle.ItemContainer>
                 <ProductFeedStyle.Img alt="Product" src={props.src} />
+                {like ? (
+                    <ProductFeedStyle.LikeButton
+                        liked
+                        onClick={() => setLike(false)}
+                    >
+                        <ProductFeedStyle.LikeIcon
+                            liked
+                            className="fas fa-heart"
+                        />
+                    </ProductFeedStyle.LikeButton>
+                ) : (
+                    <ProductFeedStyle.LikeButton onClick={() => setLike(true)}>
+                        <ProductFeedStyle.LikeIcon className="far fa-heart" />
+                    </ProductFeedStyle.LikeButton>
+                )}
                 <ProductFeedStyle.Info>
                     <ProductFeedStyle.Text>{props.text}</ProductFeedStyle.Text>
                     <ProductFeedStyle.Text price>
                         {props.price}
                     </ProductFeedStyle.Text>
-                    {like ? (
-                        <Button onClick={() => setLike(false)}>Like</Button>
-                    ) : (
-                        <Button onClick={() => setLike(true)}>Dislike</Button>
-                    )}
                 </ProductFeedStyle.Info>
             </ProductFeedStyle.ItemContainer>
         </ProductFeedStyle.Item>
